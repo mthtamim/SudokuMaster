@@ -13,3 +13,9 @@
 - No Android SDK / Gradle in this VM, so no Gradle build, no APK, no CI run yet.
 - No phone test yet. Real proof is CI green + Release APK verified + phone test.
 - Generator uniqueness is enforced by `hasUniqueSolution` (countSolutions up to 2) in code, but not run on-device yet.
+
+## v1.0.1 checks (2026-11-27, local static only)
+- activity_main.xml parses as XML; all 33 R.id.* still match; all Buttons have minWidth=0 + maxLines=1.
+- Number pad: 3x3 GridLayout, each button ~112dp wide on a 360dp screen, 22sp digit — no longer clipped by Material Button padding.
+- Version bumped to 1.0.1 / versionCode 2. Workflow file still names v1.0.0 APK — it must be updated via browser to v1.0.1 BEFORE the push.
+- NOT proven: no Gradle build / CI / phone test yet.

@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btnHard).setOnClickListener { difficulty = SudokuLogic.Difficulty.HARD; newGame() }
         findViewById<Button>(R.id.btnExpert).setOnClickListener { difficulty = SudokuLogic.Difficulty.EXPERT; newGame() }
         findViewById<Button>(R.id.btnNewGame).setOnClickListener { newGame() }
-        btnNotes.setOnClickListener { notesMode = !notesMode; btnNotes.text = if (notesMode) "Notes: On" else "Notes: Off" }
+        btnNotes.setOnClickListener { notesMode = !notesMode; btnNotes.text = if (notesMode) "Notes ✓" else "Notes" }
         findViewById<Button>(R.id.btnErase).setOnClickListener { eraseSelected() }
         findViewById<Button>(R.id.btnUndo).setOnClickListener { undo() }
         findViewById<Button>(R.id.btnHint).setOnClickListener { hint() }

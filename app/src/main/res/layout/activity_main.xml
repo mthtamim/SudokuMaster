@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- v1.0.1 UI fix: Material Buttons have 24dp side padding + 64dp minWidth by
+     default. In a 9-in-a-row that left negative room for the digit, so 1-9 were
+     clipped away; in a 5-in-a-row long labels wrapped mid-word. Fix: every
+     button sets minWidth/minHeight 0, inset 0, small padding, maxLines 1, and
+     rows hold at most 3-4 buttons. Number pad is now a 3x3 grid so each digit
+     gets a full wide button. All ids are unchanged, so MainActivity is untouched
+     except the Notes label (see MainActivity.kt). -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -31,9 +38,9 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="10dp">
-            <Button android:id="@+id/btnPlay" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Play" />
-            <Button android:id="@+id/btnSolver" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Solver" />
-            <Button android:id="@+id/btnCreator" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Creator" />
+            <Button android:id="@+id/btnPlay" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:text="Play" android:minWidth="0dp" android:minHeight="0dp" android:padding="4dp" android:maxLines="1" android:textSize="15sp" android:insetTop="0dp" android:insetBottom="0dp" />
+            <Button android:id="@+id/btnSolver" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:text="Solver" android:minWidth="0dp" android:minHeight="0dp" android:padding="4dp" android:maxLines="1" android:textSize="15sp" android:insetTop="0dp" android:insetBottom="0dp" />
+            <Button android:id="@+id/btnCreator" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:text="Creator" android:minWidth="0dp" android:minHeight="0dp" android:padding="4dp" android:maxLines="1" android:textSize="15sp" android:insetTop="0dp" android:insetBottom="0dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -41,10 +48,10 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="8dp">
-            <Button android:id="@+id/btnEasy" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Easy" />
-            <Button android:id="@+id/btnMedium" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Medium" />
-            <Button android:id="@+id/btnHard" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Hard" />
-            <Button android:id="@+id/btnExpert" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Expert" />
+            <Button android:id="@+id/btnEasy" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:text="Easy" android:minWidth="0dp" android:minHeight="0dp" android:padding="4dp" android:maxLines="1" android:textSize="14sp" android:insetTop="0dp" android:insetBottom="0dp" />
+            <Button android:id="@+id/btnMedium" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:text="Medium" android:minWidth="0dp" android:minHeight="0dp" android:padding="4dp" android:maxLines="1" android:textSize="14sp" android:insetTop="0dp" android:insetBottom="0dp" />
+            <Button android:id="@+id/btnHard" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:text="Hard" android:minWidth="0dp" android:minHeight="0dp" android:padding="4dp" android:maxLines="1" android:textSize="14sp" android:insetTop="0dp" android:insetBottom="0dp" />
+            <Button android:id="@+id/btnExpert" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:text="Expert" android:minWidth="0dp" android:minHeight="0dp" android:padding="4dp" android:maxLines="1" android:textSize="14sp" android:insetTop="0dp" android:insetBottom="0dp" />
         </LinearLayout>
 
         <com.mthtamim.sudoku.SudokuBoardView
@@ -53,20 +60,31 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp" />
 
-        <LinearLayout
+        <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:columnCount="3"
+            android:rowCount="3"
             android:layout_marginTop="10dp">
-            <Button android:id="@+id/btnNum1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="1" />
-            <Button android:id="@+id/btnNum2" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="2" />
-            <Button android:id="@+id/btnNum3" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="3" />
-            <Button android:id="@+id/btnNum4" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="4" />
-            <Button android:id="@+id/btnNum5" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="5" />
-            <Button android:id="@+id/btnNum6" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="6" />
-            <Button android:id="@+id/btnNum7" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="7" />
-            <Button android:id="@+id/btnNum8" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="8" />
-            <Button android:id="@+id/btnNum9" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="9" />
+            <Button android:id="@+id/btnNum1" android:layout_width="0dp" android:layout_height="56dp" android:layout_columnWeight="1" android:text="1" android:textSize="22sp" android:textColor="@color/text" android:backgroundTint="@color/card" android:minWidth="0dp" android:minHeight="0dp" android:padding="0dp" android:maxLines="1" android:insetTop="0dp" android:insetBottom="0dp" />
+            <Button android:id="@+id/btnNum2" android:layout_width="0dp" android:layout_height="56dp" android:layout_columnWeight="1" android:text="2" android:textSize="22sp" android:textColor="@color/text" android:backgroundTint="@color/card" android:minWidth="0dp" android:minHeight="0dp" android:padding="0dp" android:maxLines="1" android:insetTop="0dp" android:insetBottom="0dp" />
+            <Button android:id="@+id/btnNum3" android:layout_width="0dp" android:layout_height="56dp" android:layout_columnWeight="1" android:text="3" android:textSize="22sp" android:textColor="@color/text" android:backgroundTint="@color/card" android:minWidth="0dp" android:minHeight="0dp" android:padding="0dp" android:maxLines="1" android:insetTop="0dp" android:insetBottom="0dp" />
+            <Button android:id="@+id/btnNum4" android:layout_width="0dp" android:layout_height="56dp" android:layout_columnWeight="1" android:text="4" android:textSize="22sp" android:textColor="@color/text" android:backgroundTint="@color/card" android:minWidth="0dp" android:minHeight="0dp" android:padding="0dp" android:maxLines="1" android:insetTop="0dp" android:insetBottom="0dp" />
+            <Button android:id="@+id/btnNum5" android:layout_width="0dp" android:layout_height="56dp" android:layout_columnWeight="1" android:text="5" android:textSize="22sp" android:textColor="@color/text" android:backgroundTint="@color/card" android:minWidth="0dp" android:minHeight="0dp" android:padding="0dp" android:maxLines="1" android:insetTop="0dp" android:insetBottom="0dp" />
+            <Button android:id="@+id/btnNum6" android:layout_width="0dp" android:layout_height="56dp" android:layout_columnWeight="1" android:text="6" android:textSize="22sp" android:textColor="@color/text" android:backgroundTint="@color/card" android:minWidth="0dp" android:minHeight="0dp" android:padding="0dp" android:maxLines="1" android:insetTop="0dp" android:insetBottom="0dp" />
+            <Button android:id="@+id/btnNum7" android:layout_width="0dp" android:layout_height="56dp" android:layout_columnWeight="1" android:text="7" android:textSize="22sp" android:textColor="@color/text" android:backgroundTint="@color/card" android:minWidth="0dp" android:minHeight="0dp" android:padding="0dp" android:maxLines="1" android:insetTop="0dp" android:insetBottom="0dp" />
+            <Button android:id="@+id/btnNum8" android:layout_width="0dp" android:layout_height="56dp" android:layout_columnWeight="1" android:text="8" android:textSize="22sp" android:textColor="@color/text" android:backgroundTint="@color/card" android:minWidth="0dp" android:minHeight="0dp" android:padding="0dp" android:maxLines="1" android:insetTop="0dp" android:insetBottom="0dp" />
+            <Button android:id="@+id/btnNum9" android:layout_width="0dp" android:layout_height="56dp" android:layout_columnWeight="1" android:text="9" android:textSize="22sp" android:textColor="@color/text" android:backgroundTint="@color/card" android:minWidth="0dp" android:minHeight="0dp" android:padding="0dp" android:maxLines="1" android:insetTop="0dp" android:insetBottom="0dp" />
+        </GridLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+            <Button android:id="@+id/btnNotes" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:text="Notes" android:minWidth="0dp" android:minHeight="0dp" android:padding="4dp" android:maxLines="1" android:textSize="14sp" android:insetTop="0dp" android:insetBottom="0dp" />
+            <Button android:id="@+id/btnErase" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:text="Erase" android:minWidth="0dp" android:minHeight="0dp" android:padding="4dp" android:maxLines="1" android:textSize="14sp" android:insetTop="0dp" android:insetBottom="0dp" />
+            <Button android:id="@+id/btnUndo" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:text="Undo" android:minWidth="0dp" android:minHeight="0dp" android:padding="4dp" android:maxLines="1" android:textSize="14sp" android:insetTop="0dp" android:insetBottom="0dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -74,11 +92,9 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="8dp">
-            <Button android:id="@+id/btnNotes" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Notes: Off" />
-            <Button android:id="@+id/btnErase" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Erase" />
-            <Button android:id="@+id/btnUndo" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Undo" />
-            <Button android:id="@+id/btnHint" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Hint" />
-            <Button android:id="@+id/btnCheck" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Check" />
+            <Button android:id="@+id/btnHint" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:text="Hint" android:minWidth="0dp" android:minHeight="0dp" android:padding="4dp" android:maxLines="1" android:textSize="14sp" android:insetTop="0dp" android:insetBottom="0dp" />
+            <Button android:id="@+id/btnCheck" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:text="Check" android:minWidth="0dp" android:minHeight="0dp" android:padding="4dp" android:maxLines="1" android:textSize="14sp" android:insetTop="0dp" android:insetBottom="0dp" />
+            <Button android:id="@+id/btnNewGame" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:text="New Game" android:minWidth="0dp" android:minHeight="0dp" android:padding="4dp" android:maxLines="1" android:textSize="14sp" android:insetTop="0dp" android:insetBottom="0dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -86,10 +102,9 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="8dp">
-            <Button android:id="@+id/btnNewGame" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="New Game" />
-            <Button android:id="@+id/btnSolveBoard" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Solve" />
-            <Button android:id="@+id/btnClearBoard" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Clear" />
-            <Button android:id="@+id/btnStats" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Stats" />
+            <Button android:id="@+id/btnSolveBoard" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:text="Solve" android:minWidth="0dp" android:minHeight="0dp" android:padding="4dp" android:maxLines="1" android:textSize="14sp" android:insetTop="0dp" android:insetBottom="0dp" />
+            <Button android:id="@+id/btnClearBoard" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:text="Clear" android:minWidth="0dp" android:minHeight="0dp" android:padding="4dp" android:maxLines="1" android:textSize="14sp" android:insetTop="0dp" android:insetBottom="0dp" />
+            <Button android:id="@+id/btnStats" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:text="Stats" android:minWidth="0dp" android:minHeight="0dp" android:padding="4dp" android:maxLines="1" android:textSize="14sp" android:insetTop="0dp" android:insetBottom="0dp" />
         </LinearLayout>
 
         <EditText
@@ -105,9 +120,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <Button android:id="@+id/btnImport" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Import" />
-            <Button android:id="@+id/btnGenerate" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Generate" />
-            <Button android:id="@+id/btnSavePuzzle" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Save Puzzle" />
+            <Button android:id="@+id/btnImport" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:text="Import" android:minWidth="0dp" android:minHeight="0dp" android:padding="4dp" android:maxLines="1" android:textSize="14sp" android:insetTop="0dp" android:insetBottom="0dp" />
+            <Button android:id="@+id/btnGenerate" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:text="Generate" android:minWidth="0dp" android:minHeight="0dp" android:padding="4dp" android:maxLines="1" android:textSize="14sp" android:insetTop="0dp" android:insetBottom="0dp" />
+            <Button android:id="@+id/btnSavePuzzle" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:text="Save" android:minWidth="0dp" android:minHeight="0dp" android:padding="4dp" android:maxLines="1" android:textSize="14sp" android:insetTop="0dp" android:insetBottom="0dp" />
         </LinearLayout>
 
         <TextView

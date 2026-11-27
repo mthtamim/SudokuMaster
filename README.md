@@ -14,3 +14,6 @@ CI builds the debug APK (see workflow note below). Local: Android Studio / Gradl
 
 ## Workflow note (browser step, NOT in the push set)
 The GitHub App has no Workflows permission, so `.github/workflows/android.yml` must be added via the browser BEFORE the code push. The code push excludes it. See `sudoku-app-workflow-android.yml` in the workspace (outside this folder).
+
+## v1.0.1 (Phase 1, Ultimate plan)
+UI fix only, no logic change: number pad is now a 3x3 grid with 56dp dark buttons (digits 1-9 visible at 22sp); every button sets minWidth/minHeight 0, inset 0, maxLines 1; action buttons split into rows of 3 (Notes/Erase/Undo, Hint/Check/New Game, Solve/Clear/Stats); Notes label shortened to "Notes" / "Notes ✓"; Save Puzzle shortened to "Save".
