@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:padding="12dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sudoku Master"
+            android:textColor="@color/text"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Easy  •  00:00  •  Mistakes 0/3"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+            <Button android:id="@+id/btnPlay" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Play" />
+            <Button android:id="@+id/btnSolver" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Solver" />
+            <Button android:id="@+id/btnCreator" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Creator" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+            <Button android:id="@+id/btnEasy" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Easy" />
+            <Button android:id="@+id/btnMedium" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Medium" />
+            <Button android:id="@+id/btnHard" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Hard" />
+            <Button android:id="@+id/btnExpert" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Expert" />
+        </LinearLayout>
+
+        <com.mthtamim.sudoku.SudokuBoardView
+            android:id="@+id/boardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+            <Button android:id="@+id/btnNum1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="1" />
+            <Button android:id="@+id/btnNum2" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="2" />
+            <Button android:id="@+id/btnNum3" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="3" />
+            <Button android:id="@+id/btnNum4" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="4" />
+            <Button android:id="@+id/btnNum5" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="5" />
+            <Button android:id="@+id/btnNum6" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="6" />
+            <Button android:id="@+id/btnNum7" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="7" />
+            <Button android:id="@+id/btnNum8" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="8" />
+            <Button android:id="@+id/btnNum9" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="9" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+            <Button android:id="@+id/btnNotes" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Notes: Off" />
+            <Button android:id="@+id/btnErase" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Erase" />
+            <Button android:id="@+id/btnUndo" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Undo" />
+            <Button android:id="@+id/btnHint" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Hint" />
+            <Button android:id="@+id/btnCheck" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Check" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+            <Button android:id="@+id/btnNewGame" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="New Game" />
+            <Button android:id="@+id/btnSolveBoard" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Solve" />
+            <Button android:id="@+id/btnClearBoard" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Clear" />
+            <Button android:id="@+id/btnStats" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Stats" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/etImport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Paste 81 chars: digits, 0 or . for empty (Solver)"
+            android:textColor="@color/text"
+            android:textColorHint="@color/text_secondary"
+            android:layout_marginTop="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button android:id="@+id/btnImport" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Import" />
+            <Button android:id="@+id/btnGenerate" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Generate" />
+            <Button android:id="@+id/btnSavePuzzle" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Save Puzzle" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvSteps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Steps and results appear here."
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/tvStats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp"
+            android:layout_marginTop="6dp" />
+
+    </LinearLayout>
+</ScrollView>

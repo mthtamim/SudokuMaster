@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sudoku Master</string>
+    <string name="play">Play</string>
+    <string name="solver">Solver</string>
+    <string name="creator">Creator</string>
+    <string name="new_game">New Game</string>
+    <string name="notes">Notes</string>
+    <string name="erase">Erase</string>
+    <string name="undo">Undo</string>
+    <string name="hint">Hint</string>
+    <string name="check">Check</string>
+    <string name="solve">Solve</string>
+    <string name="clear">Clear</string>
+    <string name="stats">Stats</string>
+</resources>
